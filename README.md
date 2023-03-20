@@ -48,6 +48,19 @@ You can setup this repository by following this manual
    http://127.0.0.1:3000
    ```
 
+ ## Routes
+
+You can access the following routes on you browser:
+
+ - /restaurants
+ - /restaurants/:id
+ - /pizzas
+ 
+ Using a tool like Postman or Thunder client you can test the above API endpoints including:
+  
+ - DELETE /restaurants/:id
+ - POST /restaurant_pizzas
+
  ## Author
 This repository is created and maintained by:
 
