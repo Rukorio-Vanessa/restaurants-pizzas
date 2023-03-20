@@ -14,10 +14,15 @@ class RestaurantsController < ApplicationController
         end
     end
 
-    #DELETE: delete resaturand by id
-    #def destroy
-     #   restaurant = Restaurant.find_by(id: params[:id])
-      #  restaurant.destroy
-       # render json: {}, status: :no_content
-    #end
+    #DELETE: delete resaturany by id
+    def destroy
+        restaurant = Restaurant.find_by(id: params[:id])
+        if restaurant
+            restaurant.destroy
+            render json: {}, status: :no_content
+        else
+            render json: {error: "Restaurant not found"}, status: :not_found
+   
+        end     
+    end
 end
