@@ -6,7 +6,8 @@ class RestaurantsController < ApplicationController
 
     #GET: display  restaurant by id
     def show
-        restaurant = Restaurant.find_by(id: params[:id])
+        restaurant = Bird.find(params[:id])
+
         if restaurant
             render json: restaurant, include: :pizzas
         else
@@ -16,7 +17,7 @@ class RestaurantsController < ApplicationController
 
     #DELETE: delete resaturany by id
     def destroy
-        restaurant = Restaurant.find_by(id: params[:id])
+        restaurant = find_restaurant
         if restaurant
             restaurant.destroy
             render json: {}, status: :no_content
@@ -25,4 +26,10 @@ class RestaurantsController < ApplicationController
    
         end     
     end
+
+    private
+    def find_restaurant
+        Restaurant.find(params[:id])
+    end
+
 end
