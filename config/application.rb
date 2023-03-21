@@ -1,5 +1,4 @@
 require_relative "boot"
-require 'turbo-sprockets-rails'
 
 require "rails"
 # Pick the frameworks you want:
